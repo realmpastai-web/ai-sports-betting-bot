@@ -1,0 +1,42 @@
+{
+  "version": "1.0.0",
+  "name": "AI Sports Betting Discord Bot",
+  "description": "Automated sports betting analytics with AI predictions and Discord integration",
+  "author": "QuantBitRealm",
+  "github": "github.com/realmpastai-web/ai-sports-betting-bot",
+  "status": "proposed",
+  "client_job": {
+    "source": "freelancer.com",
+    "title": "Build Automated AI Sports Betting System + Discord Bot",
+    "budget": "$337 avg bid",
+    "bids": 96,
+    "proposal_status": "drafted"
+  },
+  "tech_stack": {
+    "language": "Python 3.11+",
+    "discord": "discord.py v2.3+",
+    "ml": ["scikit-learn", "XGBoost", "pandas", "numpy"],
+    "database": "PostgreSQL + SQLAlchemy",
+    "api": "The Odds API",
+    "deployment": "Docker + Railway"
+  },
+  "features": [
+    "Live odds fetching via The Odds API",
+    "Logistic Regression baseline model",
+    "XGBoost prediction model",
+    "EV and Edge calculation",
+    "Risk management (bankroll, daily limits)",
+    "Discord bot auto-posting",
+    "ROI and CLV tracking",
+    "PostgreSQL data persistence"
+  ],
+  "timeline": "14 days",
+  "pricing": {
+    "fixed_price": 450,
+    "currency": "USD",
+    "milestones": [
+      {"name": "API + Database", "percent": 50, "deliverables": ["Odds API integration", "PostgreSQL schema"]},
+      {"name": "Completion", "percent": 50, "deliverables": ["ML models", "Discord bot", "Deployment"]}
+    ]
+  }
+}

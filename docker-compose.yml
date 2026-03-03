@@ -1,0 +1,27 @@
+version: '3.8'
+
+services:
+  bot:
+    build: .
+    container_name: ai-sports-betting-bot
+    restart: unless-stopped
+    environment:
+      - DISCORD_BOT_TOKEN=${DISCORD_BOT_TOKEN}
+      - DISCORD_CHANNEL_ID=${DISCORD_CHANNEL_ID}
+      - DISCORD_GUILD_ID=${DISCORD_GUILD_ID}
+      - ODDS_API_KEY=${ODDS_API_KEY}
+      - ODDS_API_REGION=${ODDS_API_REGION:-us}
+      - ODDS_API_MARKETS=${ODDS_API_MARKETS:-h2h}
+      - DATABASE_URL=${DATABASE_URL:-sqlite:///data/betting.db}
+      - MAX_UNITS_PER_BET=${MAX_UNITS_PER_BET:-2.0}
+      - MAX_DAILY_LOSS=${MAX_DAILY_LOSS:-5.0}
+      - MAX_BETS_PER_DAY=${MAX_BETS_PER_DAY:-5}
+      - EV_THRESHOLD=${EV_THRESHOLD:-0.05}
+      - DEFAULT_SPORTS=${DEFAULT_SPORTS:-basketball_nba,americanfootball_nfl}
+    volumes:
+      - ./data:/app/data
+    logging:
+      driver: "json-file"
+      options:
+        max-size: "10m"
+        max-file: "3"
